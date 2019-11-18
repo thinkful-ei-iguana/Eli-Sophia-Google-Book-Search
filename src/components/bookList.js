@@ -7,14 +7,24 @@ export default class BookList extends Component {
 
     console.log(books);
 
-    books.map(book => {
-      const { title, description, authors } = book.volumeInfo;
+    return books.map(book => {
+      const { title, description, authors, imageLinks } = book.volumeInfo;
+      const amount = book.saleInfo.listPrice?book.saleInfo.listPrice.amount:book.saleInfo.saleability;
+      const bookId = book.id;
+      console.log(amount);
+      return (
+        <section>
+          <BookItem
+          key={bookId} 
+          title={title} 
+          description={description} 
+          author={authors}
+          imageLinks={imageLinks}
+          amount={amount}/>
+        </section>
+      );
     });
 
-    return (
-      <section>
-        <BookItem />
-      </section>
-    );
+    
   }
 }
