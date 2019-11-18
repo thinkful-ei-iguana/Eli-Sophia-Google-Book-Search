@@ -1,11 +1,9 @@
 import React, { Component } from "react";
 
-const API_KEY = "AIzaSyCiavO-vNSfoKkhB4wHAtD3Byk2nTziJiU";
-
 export default class Form extends Component {
   render() {
     return (
-      <form>
+      <form onSubmit={this.props.search}>
         <div>
           <label htmlFor="form-search-box">search:</label>
           <input
@@ -23,8 +21,8 @@ export default class Form extends Component {
             <option value="books">books</option>
             <option value="magazines">magazines</option>
           </select>
-          <label htmlFor="form-book-type">book type:</label>
-          <select defaultValue="no filter">
+          <label htmlFor="form-book-filter">book type:</label>
+          <select id="form-book-filter" defaultValue="no filter">
             <option value="no filter" disabled>
               no filter
             </option>
