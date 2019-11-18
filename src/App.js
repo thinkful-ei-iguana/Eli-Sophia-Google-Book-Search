@@ -20,14 +20,12 @@ export default class App extends Component {
     const printType = document.getElementById( "form-print-type" ).value;
     const filter = document.getElementById( "form-book-filter" ).value;
 
-    console.log( { searchTerm, printType, filter } );
-
     const getResults = async () => {
       let res;
 
-      if ( filter === "no filter" ) {
+      if ( filter === "no filter" ) 
         res = await fetch( `${ BASE_URL}${ searchTerm}&printType=${ printType }` );
-      } else 
+      else 
         res = await fetch( `${ BASE_URL}${ searchTerm}&filter=${ filter}&printType=${ printType }` );
       
       return res.json();
