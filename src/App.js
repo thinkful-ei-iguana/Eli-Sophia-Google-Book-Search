@@ -2,8 +2,9 @@ import React, { Component } from 'react';
 import './assets/style/main.min.css';
 import Form from './components/form'
 import BookList from './components/bookList'
+import key from "./env"
 
-const API_KEY = "AIzaSyCiavO-vNSfoKkhB4wHAtD3Byk2nTziJiU";
+const API_KEY = key;
 
 const BASE_URL = `https://www.googleapis.com/books/v1/volumes?key=${ API_KEY }&q=`;
 
